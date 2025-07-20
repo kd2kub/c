@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
  * REF:
  * https://www.wikihow.com/Compile-a-C-Programc-Using-the-GNU-Compiler-(GCC)
 
  */
-int main(){
+int main(int argc, char *argv[]){
 
  /**************************
  * CONSTANTS
@@ -29,16 +32,18 @@ int main(){
     float badResult = 0.0;
     int maxLength = 0; //max length of longest line
     int height = 0; //number of lines to print
+  
 
 /*********************************
  * USER INPUT
  */
 
- printf("input max rows of diamond: ");
- scanf("%d", &height);
+    printf("argv[%d](Maxlength) = %s\n", 1, argv[1]);
+    printf("argv[%d](Height) = %s\n", 2, argv[2]);
 
- printf("input number of elements / row:");
- scanf("%d", &maxLength);
+    maxLength = atoi(argv[1]);
+    height = atoi(argv[2]);
+
 /*****************************
  * INSTRUCTION SET
  */
